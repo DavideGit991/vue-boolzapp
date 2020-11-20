@@ -1,0 +1,63 @@
+[class*="col"] {
+  min-height: 60px;
+  /* background-color: lightgreen; */
+  /* border: solid 1px  #000; */
+  padding-right: 5px;
+  padding-left: 5px;
+  justify-content: center;
+  align-items: center;
+  /* index: 100; */
+  /* padding: 2px; */
+}
+.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+[class*="box"]{
+
+}
+
+.container{
+  margin-top:20px;
+}
+.totale{
+  height: 95vh;
+}
+/* proprieta sezione sx */
+
+/* 1 riga sx */
+.box-user{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box-img-user, .box-icon-user,.box-img-notifiche,.box-input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+img{
+  width: 40%;
+  border-radius: 50% 50%;
+}
+
+/* 2 riga sx */
+.box-notifiche{
+  background-color: lightblue;
+}
+.box-img-notifiche i{
+  border-radius: 50% 50%;
+  color: lightblue;
+  background-color: #fff;
+  padding: 15%;
+}
+/* 3 riga sx */
+/* 4 riga sx */
+.box-message{
+  height: 40%;
+  overflow-y: auto;
+}
+.box-user-message{
+  display: flex;
+  flex-direction: column;
+}
