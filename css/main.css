@@ -22,6 +22,7 @@
   background-color: rgb(220,220,220, 0.8);
   position: absolute;
   padding-left: 0;
+  padding-right: 0;
   height: 100%;
 }
 .box-green-back{
@@ -120,6 +121,7 @@ h6{
 /* 3 riga sx */
 .box-input{
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 60px;
   padding: 0 3%;
@@ -135,7 +137,7 @@ h6{
   border-radius: .25rem 0 0 .25rem ;
 }
 .box-input > .form-control{
-  width: 90%;
+  width: 80%;
   border-left: none;
   border-radius: 0 .25rem .25rem 0  ;
 }
