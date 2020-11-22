@@ -22,12 +22,14 @@
 
               <!-- 1 riga sx utente -->
               <div class=" row  box-user">
-                <div class="col box-img-user">
+                <div class="left">
                   <a href="#"><img src="img/avatar_1.jpg" alt="">
-                    <span>Nome utente</span>
                   </a>
                 </div>
-                <div class="col-4 box-icon-user">
+                <div class="center">
+                  <span>Nome utente</span>
+                </div>
+                <div class="right">
                   <a href="#"><i class="fas fa-comment-alt"></i></a>
                   <a href="#"><i class="fas fa-comment-alt"></i></a>
                   <a href="#"><i class="fas fa-comment-alt"></i></a>
@@ -46,7 +48,7 @@
               </div>
 
               <!-- 3 riga sx ricerca chat -->
-              <div class="row">
+              <div class="row ">
                 <div class="col box-input ">
                   <span> <i class="fas fa-search"></i></span>
                   <input placeholder="" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
@@ -95,40 +97,55 @@
                     <span>data odierna</span>
                   </div>
                 </div>
-                <!-- chat aperta -->
-                <div class="row box-message-user ">
-                  <div class="col-2 box-img-user">
-                    <img src="img/avatar_1.jpg" alt="">
-                  </div>
-                  <div class="col box-user-message ">
-                    <span>Nome utente</span>
-                    <span>message</span>
-                  </div>
-                  <div class="col-3 box-data">
-                    <span>data odierna</span>
-                  </div>
-                </div>
-                <!-- chat aperta -->
-                <div class="row box-message-user ">
-                  <div class="col-2 box-img-user">
-                    <img src="img/avatar_1.jpg" alt="">
-                  </div>
-                  <div class="col box-user-message ">
-                    <span>Nome utente</span>
-                    <span>message</span>
-                  </div>
-                  <div class="col-3 box-data">
-                    <span>data odierna</span>
-                  </div>
-                </div>
+
               </div>
             </section>
 
 <!--colonna di dx  -->
-            <section>
-              <div class="col-8 right">
+            <section class="col right">
 
-              </div>
+                <!-- 1 riga dx utente -->
+                <div class=" row active-user">
+                  <div class="left">
+                    <img src="img\avatar_1.jpg" alt="">
+                  </div>
+                  <div class="center">
+                    <span>Nome utente</span>
+                    <span> ultimo accesso.....</span>
+                  </div>
+                  <div class="right">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-paperclip"></i></a>
+                    <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                  </div>
+                </div>
+
+                <!-- 2 riga dx utente -->
+                <div class=" row active-chat">
+                  <div class="send-msg">
+                    <div class="box-mesg-send">
+
+                    </div>
+                  </div>
+                  <div class="received-msg">
+                    <div class="box-mesg-received">
+
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3 riga dx utente -->
+                <div class=" row search">
+                  <div class="left">
+                    <a href="#"> <i class="far fa-smile"></i> </a>
+                  </div>
+                  <div class="center">
+                    <input placeholder="inserisci un messaggio da inviare" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+                  <div class="right">
+                    <a href="#"><i class="fas fa-microphone"></i></a>
+                  </div>
+                </div>
             </section>
 
           </div>

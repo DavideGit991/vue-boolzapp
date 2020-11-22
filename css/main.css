@@ -2,45 +2,64 @@
   min-height: 60px;
   /* background-color: lightgreen; */
   /* border: solid 1px  #000; */
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 0;
+  padding-left: 0;
   justify-content: center;
   align-items: center;
   /* index: 100; */
   /* padding: 2px; */
 }
+
 .row{
   margin-left: 0;
   margin-right: 0;
 }
-[class*="box"]{
-
-}
-
 .container{
   margin-top:20px;
 }
 .totale{
+  display: flex;
   height: 95vh;
+  border: solid 1px gray;
 }
 /* proprieta sezione sx */
 
 /* 1 riga sx */
 .box-user{
+  height: 70px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
-.box-img-user, .box-icon-user,.box-img-notifiche,.box-input {
+.box-user > .left{
+  width: 20%;
+}
+.box-user > .center{
+  width: 50%
+}
+.box-user > .right{
+  width: 30%
+}
+
+
+
+
+.box-icon-user,.box-img-notifiche,.box-input, .box-data {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 img{
-  width: 40%;
+  height:  auto;
+  width: 60%;
   border-radius: 50% 50%;
 }
-
+.box-img-user > img{
+  height:  auto;
+  width: 100%;
+}
+.left{
+  padding:  0 5px;
+}
 /* 2 riga sx */
 .box-notifiche{
   background-color: lightblue;
@@ -60,4 +79,86 @@ img{
 .box-user-message{
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+/* proprietà colonna dx */
+
+/* 1riga dx */
+.active-user, .search{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+  height: 70px;
+}
+
+.active-user >.left  {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+.active-user >.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 70%;
+}
+.active-user >.right{
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+}
+
+/* 2 riga dx */
+.active-chat{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  height: calc(95vh - (140px));
+  background-image: url("../img/mine.jpg");
+  overflow-y: auto;
+}
+.received-msg{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 3%;
+}
+.send-msg{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 3%;
+}
+.box-mesg-send{
+  width: 50%;
+  min-height: 40px;
+  padding: 2%;
+  border-radius: 5px;
+  background-color: lightgreen;
+}
+.box-mesg-received{
+  width: 50%;
+  min-height: 40px;
+  padding: 2%;
+  border-radius: 5px;
+  background-color: #fff;
+}
+/* 3 riga dx */
+.search{
+  display: flex;
+  align-items: center;
+}
+.search > .left, .search > .right {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+}
+.search > .center {
+  display: flex;
+  justify-content: center;
+  width: 80%;
 }
