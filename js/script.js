@@ -9,14 +9,13 @@ var app =new Vue(
  {
   inputSearchUser:'',
   inputMsgUser:'',
-  chat:[
-  {
+  chatActive:[{
     nomeUtente:"Mario",
     linkImgUtente:"img/avatar_2.jpg",
     dataAccess:"Oggi ore 15:54",
     lastMsgReceived:"last-message",
     dateLastMsgReceived:"10:25",
-    stateChat:true,
+    stateChat: false,
     sendMsg:[{
       msg:["msg1","msg2"],
       date:["data1","data2"]
@@ -24,7 +23,25 @@ var app =new Vue(
     receivedMsg:[{
       msg:["msg1","msg2"],
       date:["data1","data2"]
+    }]
+   }],
+  chat:[
+  //prima chat
+  {
+    nomeUtente:"Mario",
+    linkImgUtente:"img/avatar_2.jpg",
+    dataAccess:"Oggi ore 15:54",
+    lastMsgReceived:"last-message",
+    dateLastMsgReceived:"10:25",
+    stateChat: false,
+    sendMsg:[{
+      msg:["msg1","msg2"],
+      date:["data1","data2"]
     }],
+    receivedMsg:[{
+      msg:["msg1","msg2"],
+      date:["data1","data2"]
+    }]
    },
    // seconda chat
   {
@@ -79,8 +96,14 @@ var app =new Vue(
     },
   ]
  },
- methods:{}
-
+ methods:{
+ openThis(item) {
+  item.stateChat = !item.stateChat;
+  this.chatActive = this.chat.filter((item)=>{return item.stateChat===true});
+  item.stateChat = !item.stateChat;
+  console.log(this.chatActive);
+ }
+ }
 
 
 
