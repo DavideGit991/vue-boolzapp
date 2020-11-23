@@ -99,23 +99,27 @@
 
                 <!-- 2 riga dx utente -->
                 <div class=" row active-chat">
-                  <div class="send-msg">
+
+                  <!-- messaggi spediti -->
+                  <div v-for="item in chatActive.sendMsg" class="send-msg">
                     <div class="box-msg-send">
                       <div class="msg">
-                        <h5>messaggio spedito</h5>
+                        <h5>{{item.msg}}</h5>
                       </div>
                       <div class="data-send">
-                        <h6>data msg inviato</h6>
+                        <h6>{{item.date}}</h6>
                       </div>
                     </div>
                   </div>
-                  <div class="received-msg">
+
+                  <!-- messaggi ricevuti -->
+                  <div v-for="item in chatActive.receivedMsg" class="received-msg">
                     <div class="box-msg-received">
                       <div class="msg">
-                        <h5>messaggio ricevuto</h5>
+                        <h5>{{item.msg}}</h5>
                       </div>
                       <div class="data-received">
-                        <h6>data di ricezione msg</h6>
+                        <h6>{{item.date}}</h6>
                       </div>
                     </div>
                   </div>

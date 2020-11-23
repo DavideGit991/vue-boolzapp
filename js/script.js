@@ -16,14 +16,14 @@ var app =new Vue(
     lastMsgReceived:"last-message",
     dateLastMsgReceived:"10:25",
     stateChat: false,
-    sendMsg:[{
+    sendMsg:{
       msg:["msg1","msg2"],
       date:["data1","data2"]
-    }],
-    receivedMsg:[{
+    },
+    receivedMsg:{
       msg:["msg1","msg2"],
       date:["data1","data2"]
-    }]
+    }
    }],
   chat:[
   //prima chat
@@ -34,14 +34,14 @@ var app =new Vue(
     lastMsgReceived:"last-message",
     dateLastMsgReceived:"10:25",
     stateChat: false,
-    sendMsg:[{
+    sendMsg:{
       msg:["msg1","msg2"],
       date:["data1","data2"]
-    }],
-    receivedMsg:[{
+    },
+    receivedMsg:{
       msg:["msg1","msg2"],
       date:["data1","data2"]
-    }]
+    }
    },
    // seconda chat
   {
@@ -51,14 +51,14 @@ var app =new Vue(
      lastMsgReceived:"last-message",
      dateLastMsgReceived:"10:25",
      stateChat:false,
-     sendMsg:[{
+     sendMsg:{
        msg:["msg1","msg2"],
        date:["data1","data2"]
-     }],
-     receivedMsg:[{
+     },
+     receivedMsg:{
        msg:["msg1","msg2"],
        date:["data1","data2"]
-     }],
+     },
     },
    // terza chat
   {
@@ -68,14 +68,14 @@ var app =new Vue(
       lastMsgReceived:"last-message",
       dateLastMsgReceived:"10:25",
       stateChat:false,
-      sendMsg:[{
+      sendMsg:{
         msg:["msg1","msg2"],
         date:["data1","data2"]
-      }],
-      receivedMsg:[{
+      },
+      receivedMsg:{
         msg:["msg1","msg2"],
         date:["data1","data2"]
-      }],
+      },
      },
    // quarta chat
   {
@@ -85,14 +85,14 @@ var app =new Vue(
        lastMsgReceived:"last-message",
        dateLastMsgReceived:"10:25",
        stateChat:false,
-       sendMsg:[{
+       sendMsg:{
          msg:["msg1","msg2"],
          date:["data1","data2"]
-       }],
-       receivedMsg:[{
+       },
+       receivedMsg:{
          msg:["msg1","msg2"],
          date:["data1","data2"]
-       }],
+       },
     },
   ]
  },
@@ -101,7 +101,7 @@ var app =new Vue(
   item.stateChat = !item.stateChat;
   this.chatActive = this.chat.filter((item)=>{return item.stateChat===true});
   item.stateChat = !item.stateChat;
-  console.log(this.chatActive);
+  // console.log(this.chatActive);
  }
  }
 
