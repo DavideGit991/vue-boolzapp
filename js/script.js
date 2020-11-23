@@ -19,14 +19,9 @@ var app =new Vue(
     stateChat: false,
     messaggio:[
       {
-        testo:"mio messaaggio",
+        testo:"mio messaaggio ed e' solo uno in mario",
         data:"ora invio",
         miomessaggio:true
-      },
-      {
-        testo:"suo messaggio",
-        data:"ora invio",
-        miomessaggio:false
       }
     ]
    }],
@@ -41,7 +36,7 @@ var app =new Vue(
     stateChat: false,
     messaggio:[
       {
-        testo:"mio messaaggio",
+        testo:"mio messaaggio ed e' solo uno in mario",
         miomessaggio:true
       }
     ]
@@ -62,6 +57,11 @@ var app =new Vue(
        },
        {
          testo:"suo messaggio",
+         data:"ora invio",
+         miomessaggio:false
+       },
+       {
+         testo:"Giovanni a 3 messaggi in lista",
          data:"ora invio",
          miomessaggio:false
        }
@@ -85,6 +85,16 @@ var app =new Vue(
           testo:"suo messaggio",
           data:"ora invio",
           miomessaggio:false
+        },
+        {
+          testo:"mio messaaggio",
+          data:"ora invio",
+          miomessaggio:true
+        },
+        {
+          testo:"Luca ha 4 msg",
+          data:"ora invio",
+          miomessaggio:false
         }
       ]
      },
@@ -98,7 +108,7 @@ var app =new Vue(
        stateChat:false,
        messaggio:[
          {
-           testo:"mio messaaggio",
+           testo:"io sono Luisa",
            data:"ora invio",
            miomessaggio:true
          },

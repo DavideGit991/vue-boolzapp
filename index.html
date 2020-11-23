@@ -98,14 +98,14 @@
                 </div>
 
                 <!-- 2 riga dx utente -->
-                <div v-for="item in chatActive.messaggio" class=" row active-chat">
+                <div  class="row active-chat">
                   <!-- messaggi -->
-                  <div :class=(item.miomessaggio === true)? "send-msg":"received-msg">
-                    <div :class=(item.miomessaggio === true)? "box-msg-send":"box-msg-received">
+                  <div v-for="(item,i) in chatActive[0].messaggio" :class="item.miomessaggio === true? 'send-msg' :'received-msg'">
+                    <div :class="(item.miomessaggio)=== true? 'box-msg-send' : 'box-msg-received'">
                       <div class="msg">
                         <h5>{{item.testo}}</h5>
                       </div>
-                      <div :class=(item.miomessaggio === true)? "data-send":"data-received">
+                      <div :class="item.miomessaggio === true ? 'data-send' : 'data-received'">
                         <h6>{{item.data}}</h6>
                       </div>
                     </div>
