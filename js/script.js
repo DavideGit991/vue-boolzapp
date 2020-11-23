@@ -9,6 +9,7 @@ var app =new Vue(
  {
   inputSearchUser:'',
   inputMsgUser:'',
+  // array della chat attiva
   chatActive:[{
     nomeUtente:"Mario",
     linkImgUtente:"img/avatar_2.jpg",
@@ -16,14 +17,18 @@ var app =new Vue(
     lastMsgReceived:"last-message",
     dateLastMsgReceived:"10:25",
     stateChat: false,
-    sendMsg:{
-      msg:["msg1","msg2"],
-      date:["data1","data2"]
-    },
-    receivedMsg:{
-      msg:["msg1","msg2"],
-      date:["data1","data2"]
-    }
+    messaggio:[
+      {
+        testo:"mio messaaggio",
+        data:"ora invio",
+        miomessaggio:true
+      },
+      {
+        testo:"suo messaggio",
+        data:"ora invio",
+        miomessaggio:false
+      }
+    ]
    }],
   chat:[
   //prima chat
@@ -34,14 +39,12 @@ var app =new Vue(
     lastMsgReceived:"last-message",
     dateLastMsgReceived:"10:25",
     stateChat: false,
-    sendMsg:{
-      msg:["msg1","msg2"],
-      date:["data1","data2"]
-    },
-    receivedMsg:{
-      msg:["msg1","msg2"],
-      date:["data1","data2"]
-    }
+    messaggio:[
+      {
+        testo:"mio messaaggio",
+        miomessaggio:true
+      }
+    ]
    },
    // seconda chat
   {
@@ -51,14 +54,18 @@ var app =new Vue(
      lastMsgReceived:"last-message",
      dateLastMsgReceived:"10:25",
      stateChat:false,
-     sendMsg:{
-       msg:["msg1","msg2"],
-       date:["data1","data2"]
-     },
-     receivedMsg:{
-       msg:["msg1","msg2"],
-       date:["data1","data2"]
-     },
+     messaggio:[
+       {
+         testo:"mio messaaggio",
+         data:"ora invio",
+         miomessaggio:true
+       },
+       {
+         testo:"suo messaggio",
+         data:"ora invio",
+         miomessaggio:false
+       }
+     ]
     },
    // terza chat
   {
@@ -68,14 +75,18 @@ var app =new Vue(
       lastMsgReceived:"last-message",
       dateLastMsgReceived:"10:25",
       stateChat:false,
-      sendMsg:{
-        msg:["msg1","msg2"],
-        date:["data1","data2"]
-      },
-      receivedMsg:{
-        msg:["msg1","msg2"],
-        date:["data1","data2"]
-      },
+      messaggio:[
+        {
+          testo:"mio messaaggio",
+          data:"ora invio",
+          miomessaggio:true
+        },
+        {
+          testo:"suo messaggio",
+          data:"ora invio",
+          miomessaggio:false
+        }
+      ]
      },
    // quarta chat
   {
@@ -85,14 +96,18 @@ var app =new Vue(
        lastMsgReceived:"last-message",
        dateLastMsgReceived:"10:25",
        stateChat:false,
-       sendMsg:{
-         msg:["msg1","msg2"],
-         date:["data1","data2"]
-       },
-       receivedMsg:{
-         msg:["msg1","msg2"],
-         date:["data1","data2"]
-       },
+       messaggio:[
+         {
+           testo:"mio messaaggio",
+           data:"ora invio",
+           miomessaggio:true
+         },
+         {
+           testo:"suo messaggio",
+           data:"ora invio",
+           miomessaggio:false
+         }
+       ]
     },
   ]
  },
