@@ -119,7 +119,7 @@ var app =new Vue(
      this.inputMsgUser ='';
      setTimeout(()=> {
       this.contatti[this.indexActive].messaggio.push({testo:"ok....", miomessaggio:false, data:'15:57:55'})
-    },2000)
+    },1500)
    }
   }
 

@@ -82,13 +82,13 @@
             <section class="col right">
 
                 <!-- 1 riga dx utente -->
-                <div v-for="item in contatti[indexActive]" class=" row active-user">
+                <div  class="row active-user">
                   <div class="left">
-                    <img :src="item.linkImgUtente" alt="">
+                    <img :src="contatti[indexActive].linkImgUtente" alt="">
                   </div>
                   <div class="center">
-                    <h4>{{item.nomeUtente}}</h4>
-                    <h6>{{item.dataAccess}}</h6>
+                    <h4>{{contatti[indexActive].nomeUtente}}</h4>
+                    <h6>{{contatti[indexActive].dataAccess}}</h6>
                   </div>
                   <div class="right">
                     <a href="#"><i class="fas fa-search"></i></a>
@@ -96,9 +96,9 @@
                     <a href="#"><i class="fas fa-ellipsis-v"></i></a>
                   </div>
                 </div>
-                
+
                 <!-- 2 riga dx utente -->
-                <div  class="row active-chat">
+                <div   class="row active-chat containerchat">
                   <!-- messaggi -->
                   <div v-for="(item,i) in contatti[indexActive].messaggio" :class="item.miomessaggio === true? 'send-msg' :'received-msg'">
                     <div :class="(item.miomessaggio)=== true? 'box-msg-send' : 'box-msg-received'">
