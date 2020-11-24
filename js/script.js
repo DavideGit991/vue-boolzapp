@@ -7,23 +7,9 @@ var app =new Vue(
  {
   inputSearchUser:'',
   inputMsgUser:'',
+  indexActive:0,
   // array della chat attiva
-  chatActive:[{
-    nomeUtente:"Mario",
-    linkImgUtente:"img/avatar_2.jpg",
-    dataAccess:"Oggi ore 15:54",
-    lastMsgReceived:"last-message",
-    dateLastMsgReceived:"10:25",
-    stateChat: false,
-    messaggio:[
-      {
-        testo:"mio messaaggio ed e' solo uno in mario",
-        data:"ora invio",
-        miomessaggio:true
-      }
-    ]
-   }],
-  chat:[
+  contatti:[
   //prima chat
   {
     nomeUtente:"Mario",
@@ -32,6 +18,7 @@ var app =new Vue(
     lastMsgReceived:"last-message",
     dateLastMsgReceived:"10:25",
     stateChat: false,
+    filter:true,
     messaggio:[
       {
         testo:"mio messaaggio ed e' solo uno in mario",
@@ -47,6 +34,7 @@ var app =new Vue(
      lastMsgReceived:"last-message",
      dateLastMsgReceived:"10:25",
      stateChat:false,
+     filter:true,
      messaggio:[
        {
          testo:"mio messaaggio",
@@ -73,6 +61,7 @@ var app =new Vue(
       lastMsgReceived:"last-message",
       dateLastMsgReceived:"10:25",
       stateChat:false,
+      filter:true,
       messaggio:[
         {
           testo:"mio messaaggio",
@@ -104,6 +93,7 @@ var app =new Vue(
        lastMsgReceived:"last-message",
        dateLastMsgReceived:"10:25",
        stateChat:false,
+       filter:true,
        messaggio:[
          {
            testo:"io sono Luisa",
@@ -120,18 +110,18 @@ var app =new Vue(
   ]
  },
  methods:{
- openThis(item) {
-  item.stateChat = !item.stateChat;
-  this.chatActive = this.chat.filter((item)=>{return item.stateChat===true});
-  item.stateChat = !item.stateChat;
-  // console.log(this.chatActive);
- }
- }
-
-
-
-
-
+ openThis(item,i) {
+    this.indexActive=i;
+    // console.log(this.chatActive);
+  },
+ sendMsg(){
+     this.contatti[this.indexActive].messaggio.push({testo:this.inputMsgUser, miomessaggio:true, data:'15:56:55'});
+     this.inputMsgUser ='';
+     setTimeout(()=> {
+      this.contatti[this.indexActive].messaggio.push({testo:"ok....", miomessaggio:false, data:'15:57:55'})
+    },2000)
+   }
+  }
 
 
 
