@@ -1,3 +1,4 @@
+var giorno= dataOdierna()
 
 
 var app =new Vue(
@@ -21,7 +22,7 @@ var app =new Vue(
       {
         testo:"mio messaaggio ed e' solo uno in mario",
         miomessaggio:true,
-        data:"data di ora"
+        data:giorno
       }
     ]
    },
@@ -36,17 +37,17 @@ var app =new Vue(
      messaggio:[
        {
          testo:"mio messaaggio",
-         data:"ora invio",
+         data:giorno,
          miomessaggio:true
        },
        {
          testo:"suo messaggio",
-         data:"ora invio",
+         data:giorno,
          miomessaggio:false
        },
        {
          testo:"Giovanni a 3 messaggi in lista",
-         data:"ora invio",
+         data:giorno,
          miomessaggio:false
        }
      ]
@@ -62,22 +63,22 @@ var app =new Vue(
       messaggio:[
         {
           testo:"mio messaaggio",
-          data:"15:25",
+          data:giorno,
           miomessaggio:true
         },
         {
           testo:"suo messaggio",
-          data:"ora invio",
+          data:giorno,
           miomessaggio:false
         },
         {
           testo:"mio messaaggio",
-          data:"ora invio",
+          data:giorno,
           miomessaggio:true
         },
         {
           testo:"Luca ha 4 msg",
-          data:"ora invio",
+          data:giorno,
           miomessaggio:false
         }
       ]
@@ -93,12 +94,12 @@ var app =new Vue(
        messaggio:[
          {
            testo:"io sono Luisa",
-           data:"ora invio",
+           data:giorno,
            miomessaggio:true
          },
          {
            testo:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-           data:"ora invio",
+           data:giorno,
            miomessaggio:false
          }
        ]
@@ -115,28 +116,17 @@ var app =new Vue(
       if (this.inputMsgUser=== '') {
       }
       else {
-        this.contatti[this.indexActive].messaggio.push({testo:this.inputMsgUser, miomessaggio:true, data:this.dataOdierna()});
+        this.contatti[this.indexActive].messaggio.push({testo:this.inputMsgUser, miomessaggio:true, data:giorno});
         this.inputMsgUser ='';
         setTimeout(()=> {
-         this.contatti[this.indexActive].messaggio.push({testo:"ok....", miomessaggio:false, data:this.dataOdierna()})
+         this.contatti[this.indexActive].messaggio.push({testo:"ok....", miomessaggio:false, data:giorno})
        },1500)
       }
     },
     deleteMsg(item,i){
       this.contatti[this.indexActive].messaggio.splice(i,1);
+      console.log(i);
     },
-    dataOdierna(){
-     let data = new Date();
-     let anno, mm, dd,hh, m, ss;
-     dd = data.getDay() + "-";
-     mm = data.getMonth() + "-"
-     anno = data.getFullYear() + " ";
-     hh = data.getHours() + ":";
-     m = data.getMinutes() + ":";
-     ss = data.getSeconds() ;
-     let dataOdierna =  hh + m + ss + "    " + dd + mm + anno ;
-     return dataOdierna;
-    }
 
   },
 
@@ -147,7 +137,7 @@ var app =new Vue(
       if(this.inputSearchUser.toLowerCase()){
         return this.contatti.filter((item)=>{
           // return item.nomeUtente.toLowerCase().startsWith(this.inputSearchUser);
-          return this.inputSearchUser.toLowerCase().split(' ').every(v => item.nomeUtente.toLowerCase().includes(v))
+        return this.inputSearchUser.toLowerCase().split(' ').every(v => item.nomeUtente.toLowerCase().includes(v))
       })
       }else{
         return this.contatti;
@@ -157,4 +147,18 @@ var app =new Vue(
   }
 
 
+
 });
+
+function dataOdierna(){
+ let data = new Date();
+ let anno, mm, dd,hh, m, ss;
+ dd = data.getDay() + "-";
+ mm = data.getMonth() + "-"
+ anno = data.getFullYear() + " ";
+ hh = data.getHours() + ":";
+ m = data.getMinutes() + ":";
+ ss = data.getSeconds() ;
+ let dataOdierna =  hh + m + ss + "    " + dd + mm + anno ;
+ return dataOdierna;
+}
