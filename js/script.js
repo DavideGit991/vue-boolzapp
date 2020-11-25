@@ -14,7 +14,7 @@ var app =new Vue(
   contatti:[
   //prima chat
   {
-    nomeUtente:"mario",
+    nomeUtente:"MariO",
     linkImgUtente:"img/avatar_2.jpg",
     dataAccess: "15 agosto 2105" ,
     filter:true,
@@ -139,10 +139,11 @@ var app =new Vue(
 
   computed: {
     filtroChat(){
-      if(this.inputSearchUser){
-      return this.contatti.filter((item)=>{
-      return item.nomeUtente.startsWith(this.inputSearchUser);
-      console.log(item.nomeUtente.startsWith(this.inputSearchUser));
+      if(this.inputSearchUser.toLowerCase()){
+        return this.contatti.filter((item)=>{
+          // return item.nomeUtente.toLowerCase().startsWith(this.inputSearchUser);
+          //
+          return this.inputSearchUser.toLowerCase().split(' ').every(v => item.nomeUtente.toLowerCase().includes(v))
       })
       }else{
         return this.contatti;
