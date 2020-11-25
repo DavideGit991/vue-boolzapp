@@ -56,13 +56,13 @@
                   <div>
                     <i class="fas fa-search"></i>
                   </div>
-                  <input placeholder="Cerca o inizia una nuova chat" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  <input v-model="inputSearchUser" placeholder="Cerca o inizia una nuova chat" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
               </div>
 
               <!-- 4 riga sx chat user box -->
               <div  class="row box-message-all ">
                 <!-- chat aperta -->
-                <div  v-for="(item,i) in contatti" @click="openThis(item,i)" class="box-message" :class="(i=== indexActive) ? 'back' : '' ">
+                <div  v-for="(item,i) in filtroChat" @click="openThis(item,i)" class="box-message" :class="(i=== indexActive) ? 'back' : '' ">
                   <div class="left ">
                     <img :src="item.linkImgUtente" alt="">
                   </div>

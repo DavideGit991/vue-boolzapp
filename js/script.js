@@ -14,7 +14,7 @@ var app =new Vue(
   contatti:[
   //prima chat
   {
-    nomeUtente:"Mario",
+    nomeUtente:"mario",
     linkImgUtente:"img/avatar_2.jpg",
     dataAccess: "15 agosto 2105" ,
     filter:true,
@@ -28,7 +28,7 @@ var app =new Vue(
    },
    // seconda chat
   {
-     nomeUtente:"Giovanni",
+     nomeUtente:"giovanni",
      linkImgUtente:"img/avatar_3.jpg",
      dataAccess:"data",
      lastMsgReceived:" ULTIMO msg ",
@@ -54,7 +54,7 @@ var app =new Vue(
     },
    // terza chat
   {
-      nomeUtente:"Luca",
+      nomeUtente:"luca",
       linkImgUtente:"img/avatar_4.jpg",
       dataAccess:"Oggi ore 15:54",
       lastMsgReceived:"last-message",
@@ -85,7 +85,7 @@ var app =new Vue(
      },
    // quarta chat
   {
-       nomeUtente:"Luisa",
+       nomeUtente:"luisa",
        linkImgUtente:"img/avatar_5.jpg",
        dataAccess:"Oggi ore 15:54",
        lastMsgReceived:"last-message",
@@ -108,39 +108,47 @@ var app =new Vue(
  },
 
  methods:{
- openThis(item,i) {
-    this.indexActive=i;
-    // console.log(this.chatActive);
-  },
- sendMsg(){
-    if (this.inputMsgUser=== '') {
+   openThis(item,i) {
+      this.indexActive=i;
+      // console.log(this.chatActive);
+    },
+   sendMsg(){
+      if (this.inputMsgUser=== '') {
+      }
+      else {
+        this.contatti[this.indexActive].messaggio.push({testo:this.inputMsgUser, miomessaggio:true, data:this.dataOdierna()});
+        this.inputMsgUser ='';
+        setTimeout(()=> {
+         this.contatti[this.indexActive].messaggio.push({testo:"ok....", miomessaggio:false, data:this.dataOdierna()})
+       },1500)
+      }
+    },
+    dataOdierna(){
+     let data = new Date();
+     let anno, mm, dd,hh, m, ss;
+     dd = data.getDay() + "-";
+     mm = data.getMonth() + "-"
+     anno = data.getFullYear() + " ";
+     hh = data.getHours() + ":";
+     m = data.getMinutes() + ":";
+     ss = data.getSeconds() ;
+     let dataOdierna =  hh + m + ss + "    " + dd + mm + anno ;
+     return dataOdierna;
     }
-    else {
-      this.contatti[this.indexActive].messaggio.push({testo:this.inputMsgUser, miomessaggio:true, data:this.dataOdierna()});
-      this.inputMsgUser ='';
-      setTimeout(()=> {
-       this.contatti[this.indexActive].messaggio.push({testo:"ok....", miomessaggio:false, data:this.dataOdierna()})
-     },1500)
-    }
   },
-  dataOdierna(){
-   let data = new Date();
-   let anno, mm, dd,hh, m, ss;
-   dd = data.getDay() + "-";
-   mm = data.getMonth() + "-"
-   anno = data.getFullYear() + " ";
-   hh = data.getHours() + ":";
-   m = data.getMinutes() + ":";
-   ss = data.getSeconds() ;
-   let dataOdierna =  hh + m + ss + "    " + dd + mm + anno ;
-   return dataOdierna;
+
+  computed: {
+    filtroChat(){
+      if(this.inputSearchUser){
+      return this.contatti.filter((item)=>{
+      return item.nomeUtente.startsWith(this.inputSearchUser);
+      console.log(item.nomeUtente.startsWith(this.inputSearchUser));
+      })
+      }else{
+        return this.contatti;
+      }
+    }
   }
 
 
-
- }
-
-
-
-}
-);
+});
