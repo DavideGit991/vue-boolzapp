@@ -1,10 +1,12 @@
 
+
 var app =new Vue(
 {
  el:"#app",
  // array di obj, ogni arrai contiene gli elemnti della stessa chat
  data:
  {
+
   inputSearchUser:'',
   inputMsgUser:'',
   indexActive:0,
@@ -14,15 +16,13 @@ var app =new Vue(
   {
     nomeUtente:"Mario",
     linkImgUtente:"img/avatar_2.jpg",
-    dataAccess:"Oggi ore 15:54",
-    lastMsgReceived:"last-message",
-    dateLastMsgReceived:"10:25",
-    stateChat: false,
+    dataAccess: "15 agosto 2105" ,
     filter:true,
     messaggio:[
       {
         testo:"mio messaaggio ed e' solo uno in mario",
-        miomessaggio:true
+        miomessaggio:true,
+        data:'10:25'
       }
     ]
    },
@@ -30,10 +30,9 @@ var app =new Vue(
   {
      nomeUtente:"Giovanni",
      linkImgUtente:"img/avatar_3.jpg",
-     dataAccess:"Oggi ore 15:54",
-     lastMsgReceived:"last-message",
+     dataAccess:"data",
+     lastMsgReceived:" ULTIMO msg ",
      dateLastMsgReceived:"10:25",
-     stateChat:false,
      filter:true,
      messaggio:[
        {
@@ -60,12 +59,11 @@ var app =new Vue(
       dataAccess:"Oggi ore 15:54",
       lastMsgReceived:"last-message",
       dateLastMsgReceived:"10:25",
-      stateChat:false,
       filter:true,
       messaggio:[
         {
           testo:"mio messaaggio",
-          data:"ora invio",
+          data:"15:25",
           miomessaggio:true
         },
         {
@@ -92,7 +90,6 @@ var app =new Vue(
        dataAccess:"Oggi ore 15:54",
        lastMsgReceived:"last-message",
        dateLastMsgReceived:"10:25",
-       stateChat:false,
        filter:true,
        messaggio:[
          {
@@ -109,19 +106,39 @@ var app =new Vue(
     },
   ]
  },
+
  methods:{
  openThis(item,i) {
     this.indexActive=i;
     // console.log(this.chatActive);
   },
  sendMsg(){
-     this.contatti[this.indexActive].messaggio.push({testo:this.inputMsgUser, miomessaggio:true, data:'15:56:55'});
-     this.inputMsgUser ='';
-     setTimeout(()=> {
-      this.contatti[this.indexActive].messaggio.push({testo:"ok....", miomessaggio:false, data:'15:57:55'})
-    },1500)
-   }
+    if (this.inputMsgUser=== '') {
+    }
+    else {
+      this.contatti[this.indexActive].messaggio.push({testo:this.inputMsgUser, miomessaggio:true, data:this.dataOdierna()});
+      this.inputMsgUser ='';
+      setTimeout(()=> {
+       this.contatti[this.indexActive].messaggio.push({testo:"ok....", miomessaggio:false, data:this.dataOdierna()})
+     },1500)
+    }
+  },
+  dataOdierna(){
+   let data = new Date();
+   let anno, mm, dd,hh, m, ss;
+   dd = data.getDay() + "-";
+   mm = data.getMonth() + "-"
+   anno = data.getFullYear() + " ";
+   hh = data.getHours() + ":";
+   m = data.getMinutes() + ":";
+   ss = data.getSeconds() ;
+   let dataOdierna =  hh + m + ss + "    " + dd + mm + anno ;
+   return dataOdierna;
   }
+
+
+
+ }
 
 
 

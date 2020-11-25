@@ -146,6 +146,9 @@ h6{
 }
 
 /* 4 riga sx */
+.back{
+  background-color: lightgray;
+}
 .box-message-all{
   height: calc(90vh - (200px));
   width: 100%;

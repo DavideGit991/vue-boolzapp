@@ -62,16 +62,16 @@
               <!-- 4 riga sx chat user box -->
               <div  class="row box-message-all ">
                 <!-- chat aperta -->
-                <div  v-for="(item,i) in contatti" @click="openThis(item,i)" class="box-message">
+                <div  v-for="(item,i) in contatti" @click="openThis(item,i)" class="box-message" :class="(i=== indexActive) ? 'back' : '' ">
                   <div class="left ">
                     <img :src="item.linkImgUtente" alt="">
                   </div>
                   <div class="center ">
                     <h5>{{item.nomeUtente}}</h5>
-                    <h6>{{item.lastMsgReceived}}</h6>
+                    <h6>{{item.messaggio[item.messaggio.length-1].testo}}</h6>
                   </div>
                   <div class="right">
-                    <h6>{{item.dateLastMsgReceived}}</h6>
+                    <h6>{{item.messaggio[item.messaggio.length-1].data}}</h6>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@
                   </div>
                   <div class="center">
                     <h4>{{contatti[indexActive].nomeUtente}}</h4>
-                    <h6>{{contatti[indexActive].dataAccess}}</h6>
+                    <h6>{{contatti[indexActive].messaggio[contatti[indexActive].messaggio.length-1].data}}</h6>
                   </div>
                   <div class="right">
                     <a href="#"><i class="fas fa-search"></i></a>
