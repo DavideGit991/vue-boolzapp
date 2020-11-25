@@ -17,12 +17,11 @@ var app =new Vue(
     nomeUtente:"MariO",
     linkImgUtente:"img/avatar_2.jpg",
     dataAccess: "15 agosto 2105" ,
-    filter:true,
     messaggio:[
       {
         testo:"mio messaaggio ed e' solo uno in mario",
         miomessaggio:true,
-        data:'10:25'
+        data:"data di ora"
       }
     ]
    },
@@ -123,6 +122,9 @@ var app =new Vue(
        },1500)
       }
     },
+    deleteMsg(item,i){
+      this.contatti[this.indexActive].messaggio.splice(i,1);
+    },
     dataOdierna(){
      let data = new Date();
      let anno, mm, dd,hh, m, ss;
@@ -135,6 +137,7 @@ var app =new Vue(
      let dataOdierna =  hh + m + ss + "    " + dd + mm + anno ;
      return dataOdierna;
     }
+
   },
 
   // computed attiva la funzione a una variazione
@@ -144,13 +147,13 @@ var app =new Vue(
       if(this.inputSearchUser.toLowerCase()){
         return this.contatti.filter((item)=>{
           // return item.nomeUtente.toLowerCase().startsWith(this.inputSearchUser);
-
           return this.inputSearchUser.toLowerCase().split(' ').every(v => item.nomeUtente.toLowerCase().includes(v))
       })
       }else{
         return this.contatti;
       }
     }
+
   }
 
 

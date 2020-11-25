@@ -101,7 +101,8 @@
                 <div   class="row active-chat containerchat">
                   <!-- messaggi -->
                   <div v-for="(item,i) in contatti[indexActive].messaggio" :class="item.miomessaggio === true? 'send-msg' :'received-msg'">
-                    <div :class="(item.miomessaggio)=== true? 'box-msg-send' : 'box-msg-received'">
+                    <div :class="(item.miomessaggio)=== true? 'box-msg-send' : 'box-msg-received'" class="position-relative">
+                      <i class="far fa-trash-alt position-absolute delete" @click="deleteMsg(item,i)"></i>
                       <div class="msg">
                         <h5>{{item.testo}}</h5>
                       </div>
