@@ -137,12 +137,14 @@ var app =new Vue(
     }
   },
 
+  // computed attiva la funzione a una variazione
   computed: {
+    // filtro il mio array contatti in base alle lettere che inserisco nell'input di ricerca, partendo dalla prima lettera e proseguendo
     filtroChat(){
       if(this.inputSearchUser.toLowerCase()){
         return this.contatti.filter((item)=>{
           // return item.nomeUtente.toLowerCase().startsWith(this.inputSearchUser);
-          //
+
           return this.inputSearchUser.toLowerCase().split(' ').every(v => item.nomeUtente.toLowerCase().includes(v))
       })
       }else{
